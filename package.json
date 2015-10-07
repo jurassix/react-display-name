@@ -2,10 +2,12 @@
   "name": "react-display-name",
   "version": "0.0.0",
   "description": "utility to return a react components display name",
-  "main": "./lib/index.js",
+  "main": "./lib/getDisplayName.js",
   "scripts": {
-    "build": "npm run clean && npm run lint && npm run build:lib",
+    "build": "npm run clean && npm run lint && npm run build:lib && npm run build:spec",
     "build:lib": "mkdirp lib && babel src --out-dir lib",
+    "build:spec": "mkdirp lib/spec && babel spec --out-dir lib/spec",
+    "test": "npm run build:spec && mocha 'lib/spec/*Spec.js'",
     "clean": "rimraf lib",
     "lint": "eslint src"
   },
@@ -30,10 +32,13 @@
     "babel-eslint": "^4.1.0",
     "babel-loader": "^5.3.2",
     "babelify": "^6.2.0",
+    "chai": "^3.3.0",
     "eslint": "^1.1.0",
     "eslint-config-airbnb": "0.0.8",
     "eslint-plugin-react": "^3.3.0",
     "mkdirp": "^0.5.1",
+    "mocha": "^2.3.3",
+    "react": "^0.14.0-rc1",
     "rimraf": "^2.4.3"
   }
 }
