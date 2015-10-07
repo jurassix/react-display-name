@@ -1,0 +1,39 @@
+{
+  "name": "react-display-name",
+  "version": "0.0.0",
+  "description": "utility to return a react's componenets name",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "npm run clean && npm run lint && npm run build:lib",
+    "build:lib": "mkdirp lib && babel src --out-dir lib",
+    "clean": "rimraf lib",
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jurassix/react-display-name.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "getDisplayName"
+  ],
+  "author": "jurassix (clinton.ayres@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jurassix/react-display-name/issues"
+  },
+  "homepage": "https://github.com/jurassix/react-display-name#readme",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.23",
+    "babel-eslint": "^4.1.0",
+    "babel-loader": "^5.3.2",
+    "babelify": "^6.2.0",
+    "eslint": "^1.1.0",
+    "eslint-config-airbnb": "0.0.8",
+    "eslint-plugin-react": "^3.3.0",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.4.3"
+  }
+}
