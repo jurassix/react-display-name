@@ -39,4 +39,30 @@ describe('getDisplayName', () => {
     const Simple = {};
     expect(getDisplayName(Simple)).to.equal('Component');
   });
+  it('wraps a component successfully (HoCs) ', () => {
+    const container = (WrappedComponent) => {
+      class Container extends Component {
+        static displayName = `Container(${getDisplayName(WrappedComponent)})`;
+        render() {
+          return (
+            <WrappedComponent />
+          );
+        }
+      }
+      return Container;
+    }
+
+    class HelloWorld extends Component {
+      render() {
+        return (
+          <div>Hello</div>
+        );
+      }
+    }
+
+    const HelloWorldPrime = container(HelloWorld);
+
+    expect(getDisplayName(HelloWorldPrime)).to.equal('Container(HelloWorld)');
+    expect(HelloWorldPrime.displayName).to.equal('Container(HelloWorld)');
+  })
 });
