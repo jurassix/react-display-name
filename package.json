@@ -5,8 +5,8 @@
   "main": "./lib/getDisplayName.js",
   "scripts": {
     "build": "npm run clean && npm run lint && npm run build:lib && npm run build:spec",
-    "build:lib": "mkdirp lib && babel src --out-dir lib",
-    "build:spec": "mkdirp lib/spec && babel spec --out-dir lib/spec",
+    "build:lib": "mkdirp lib && babel src -d lib",
+    "build:spec": "mkdirp lib/spec && babel spec -d lib/spec",
     "test": "npm run build:spec && mocha 'lib/spec/*Spec.js'",
     "clean": "rimraf lib",
     "lint": "eslint src"
