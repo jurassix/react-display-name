@@ -22,7 +22,7 @@ describe('getDisplayName', () => {
     expect(getDisplayName(Simple)).to.equal('Simple');
   });
   it('returns display name for a stateless component', () => {
-    const Simple = (props) => <div></div>
+    const Simple = () => <div></div>;
 
     expect(getDisplayName(Simple)).to.equal('Simple');
   });
@@ -50,7 +50,7 @@ describe('getDisplayName', () => {
         }
       }
       return Container;
-    }
+    };
 
     class HelloWorld extends Component {
       render() {
@@ -64,5 +64,5 @@ describe('getDisplayName', () => {
 
     expect(getDisplayName(HelloWorldPrime)).to.equal('Container(HelloWorld)');
     expect(HelloWorldPrime.displayName).to.equal('Container(HelloWorld)');
-  })
+  });
 });
