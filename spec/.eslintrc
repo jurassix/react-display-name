@@ -3,7 +3,9 @@
     "mocha": true
   },
   "rules": {
-    "react/no-multi-comp": 0
+    "react/no-multi-comp": 0,
+    "import/no-unresolved": 0,
+    "react/prefer-stateless-function": 0
   }
 }
 
