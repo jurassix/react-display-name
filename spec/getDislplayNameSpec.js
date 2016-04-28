@@ -1,5 +1,5 @@
-import {expect} from 'chai';
-import React, {Component} from 'react';
+import { expect } from 'chai';
+import React, { Component } from 'react';
 import getDisplayName from '../getDisplayName';
 
 describe('getDisplayName', () => {
@@ -14,7 +14,7 @@ describe('getDisplayName', () => {
   });
   it('returns display name for component when displayName is set from staic initializer', () => {
     class Simple extends Component {
-      static displayName = 'Simple';
+      static displayName = 'Simple'
       render() {
         return <div></div>;
       }
@@ -45,7 +45,7 @@ describe('getDisplayName', () => {
   it('wraps a component successfully (HoCs) ', () => {
     const container = (WrappedComponent) => {
       class Container extends Component {
-        static displayName = `Container(${getDisplayName(WrappedComponent)})`;
+        static displayName = `Container(${getDisplayName(WrappedComponent)})`
         render() {
           return (
             <WrappedComponent />
