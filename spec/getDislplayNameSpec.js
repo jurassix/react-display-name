@@ -21,6 +21,9 @@ describe('getDisplayName', () => {
     }
     expect(getDisplayName(Simple)).to.equal('Simple');
   });
+  it('returns display name of html string component', () => {
+    expect(getDisplayName('input')).to.equal('input');
+  });
   it('returns display name for a stateless component', () => {
     const Simple = () => <div></div>;
 
