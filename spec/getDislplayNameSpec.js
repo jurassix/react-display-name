@@ -6,7 +6,7 @@ describe('getDisplayName', () => {
   it('returns display name for component when displayName is set', () => {
     class Simple extends Component {
       render() {
-        return <div></div>;
+        return <div />;
       }
     }
     Simple.displayName = 'Simple';
@@ -14,9 +14,9 @@ describe('getDisplayName', () => {
   });
   it('returns display name for component when displayName is set from staic initializer', () => {
     class Simple extends Component {
-      static displayName = 'Simple'
+      static displayName = 'Simple';
       render() {
-        return <div></div>;
+        return <div />;
       }
     }
     expect(getDisplayName(Simple)).to.equal('Simple');
@@ -25,31 +25,45 @@ describe('getDisplayName', () => {
     expect(getDisplayName('input')).to.equal('input');
   });
   it('returns display name for a stateless component', () => {
-    const Simple = () => <div></div>;
+    const Simple = () => <div />;
 
     expect(getDisplayName(Simple)).to.equal('Simple');
   });
   it('returns display name for component', () => {
     class Simple extends Component {
       render() {
-        return <div></div>;
+        return <div />;
       }
     }
 
     expect(getDisplayName(Simple)).to.equal('Simple');
   });
+
   it('returns default display name non react classes', () => {
     const Simple = {};
-    expect(getDisplayName(Simple)).to.equal('Component');
+    expect(getDisplayName(Simple)).to.equal('Unknown');
   });
+
+  it('returns default display name for stateless named functions', () => {
+    const Named = function Example() {};
+    expect(getDisplayName(Named)).to.equal('Example');
+  });
+
+  it('returns default display name for stateless assigned functions', () => {
+    const Assigned = function() {};
+    expect(getDisplayName(Assigned)).to.equal('Assigned');
+  });
+
+  it('returns default display name for stateless anonymous functions', () => {
+    expect(getDisplayName(() => {})).to.equal('Unknown');
+  });
+
   it('wraps a component successfully (HoCs) ', () => {
-    const container = (WrappedComponent) => {
+    const container = WrappedComponent => {
       class Container extends Component {
-        static displayName = `Container(${getDisplayName(WrappedComponent)})`
+        static displayName = `Container(${getDisplayName(WrappedComponent)})`;
         render() {
-          return (
-            <WrappedComponent />
-          );
+          return <WrappedComponent />;
         }
       }
       return Container;
@@ -57,9 +71,7 @@ describe('getDisplayName', () => {
 
     class HelloWorld extends Component {
       render() {
-        return (
-          <div>Hello</div>
-        );
+        return <div>Hello</div>;
       }
     }
 
