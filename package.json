@@ -1,9 +1,11 @@
 {
   "name": "react-display-name",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "utility to return a react components display name",
   "main": "./lib/getDisplayName.js",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build:lib": "mkdirp lib && babel src -d lib",
     "build:spec": "mkdirp lib/spec && babel spec -d lib/spec",
@@ -17,7 +19,11 @@
     "type": "git",
     "url": "git+https://github.com/jurassix/react-display-name.git"
   },
-  "keywords": ["react", "redux", "getDisplayName"],
+  "keywords": [
+    "react",
+    "redux",
+    "getDisplayName"
+  ],
   "author": "jurassix (clinton.ayres@gmail.com)",
   "license": "MIT",
   "bugs": {
