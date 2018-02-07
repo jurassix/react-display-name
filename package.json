@@ -3,11 +3,12 @@
   "version": "0.2.3",
   "description": "utility to return a react components display name",
   "main": "./lib/getDisplayName.js",
+  "typings": "./lib/getDisplayName.d.ts",
   "files": [
     "lib"
   ],
   "scripts": {
-    "build:lib": "mkdirp lib && babel src -d lib",
+    "build:lib": "mkdirp lib && babel src -d lib && cpy src/*.d.ts lib",
     "build:spec": "mkdirp lib/spec && babel spec -d lib/spec",
     "build": "npm run clean && npm run lint && npm run build:lib && npm run build:spec",
     "clean": "rimraf lib",
@@ -31,12 +32,14 @@
   },
   "homepage": "https://github.com/jurassix/react-display-name#readme",
   "devDependencies": {
+    "@types/react": "*",
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.1.0",
+    "cpy-cli": "^1.0.1",
     "eslint": "4.3.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "7.1.0",
