@@ -34,6 +34,7 @@
   "homepage": "https://github.com/jurassix/react-display-name#readme",
   "devDependencies": {
     "@types/react": "*",
+    "ajv": "^6.10.2",
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.6.0",
@@ -45,7 +46,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "7.1.0",
     "mkdirp": "^0.5.1",
-    "mocha": "3.4.2",
+    "mocha": "^6.2.2",
     "react": "^15.0.1",
     "rimraf": "^2.5.2"
   }
