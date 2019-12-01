@@ -42,7 +42,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.1.0",
     "cpy-cli": "^1.0.1",
-    "eslint": "4.3.0",
+    "eslint": "4.18.2",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "7.1.0",
     "mkdirp": "^0.5.1",
