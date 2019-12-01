@@ -1,6 +1,6 @@
 {
   "name": "react-display-name",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "utility to return a react components display name",
   "main": "./lib/getDisplayName.js",
   "typings": "./lib/getDisplayName.d.ts",
