@@ -5,7 +5,8 @@
   "main": "./lib/getDisplayName.js",
   "typings": "./lib/getDisplayName.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "!lib/spec"
   ],
   "scripts": {
     "build:lib": "mkdirp lib && babel src -d lib && cpy src/*.d.ts lib",
